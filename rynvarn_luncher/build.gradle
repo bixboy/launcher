@@ -1,0 +1,46 @@
+plugins {
+    id 'idea'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java-library'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+apply plugin: 'org.openjfx.javafxplugin'
+
+group 'com.gihub.bixboy'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://jitpack.io'
+        name = 'JitPack'
+    }
+}
+
+dependencies {
+    implementation 'com.github.litarvan:openauth:1+'
+    implementation 'de.jensd:fontawesomefx-fontawesome:4+'
+
+    implementation 'fr.flowarg:flowupdater:1.7.4'
+    implementation 'fr.flowarg:flowupdater-optifineplugin:2+'
+    implementation 'fr.flowarg:flowupdater-curseforgeplugin:2+'
+    implementation 'fr.flowarg:openlauncherlib:3+'
+
+    implementation 'com.github.goxr3plus:FX-BorderlessScene:4+'
+    implementation 'com.github.oshi:oshi-core:5+'
+
+}
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web', 'javafx.swing']
+}
+
+application {
+    getMainClass().set('com.gihub.bixboy.Main')
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+}
